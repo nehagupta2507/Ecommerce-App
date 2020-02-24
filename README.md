@@ -1,3 +1,17 @@
+# Description
+Clothing App
+
+## Technologies Used
+- React
+- React-Router
+- Firebase
+- SASS
+- MongoDB
+- Node
+- Express
+- Redux
+- Stripe
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
