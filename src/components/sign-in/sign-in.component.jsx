@@ -5,54 +5,60 @@ import { signInWithGoogle } from '../../firebase/firebase.utils';
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      email:'',
-      password:''
-    }
-  }
-  handleSubmit = e =>{
-    e.preventDefault();
-    this.setState({email: '', password:''});
-  }
-  handleChange =e =>{
-    const { value, name }= e.target;
-    this.setState({[name]: value })
+
+    this.state = {
+      email: '',
+      password: ''
+    };
   }
 
-  render(){
-    return(
+  handleSubmit = event => {
+    event.preventDefault();
+
+    this.setState({ email: '', password: '' });
+  };
+
+  handleChange = event => {
+    const { value, name } = event.target;
+
+    this.setState({ [name]: value });
+  };
+
+  render() {
+    return (
       <div className='sign-in'>
         <h2>I already have an account</h2>
-        <span>Sign In with your email and password</span>
+        <span>Sign in with your email and password</span>
+
         <form onSubmit={this.handleSubmit}>
-          <FormInput 
-            name='email' 
-            type ='email' 
-            value={this.state.email} 
+          <FormInput
+            name='email'
+            type='email'
             handleChange={this.handleChange}
+            value={this.state.email}
             label='email'
-            required />
-          <FormInput 
+            required
+          />
+          <FormInput
             name='password'
             type='password'
-            label='password'
-            autoComplete='on'
-            value={this.state.password} 
+            value={this.state.password}
             handleChange={this.handleChange}
-            required 
+            label='password'
+            required
           />
           <div className='buttons'>
-            <Button type='submit' value='Submit Form'>Sign In </Button>
+            <Button type='submit'> Sign in </Button>
             <Button onClick={signInWithGoogle} isGoogleSignIn>
-              Sign In with Google
+              Sign in with Google
             </Button>
           </div>
         </form>
       </div>
-    )
+    );
   }
+}
 
-};
 export default SignIn;
