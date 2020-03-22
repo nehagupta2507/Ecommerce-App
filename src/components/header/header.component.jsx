@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// Access to things related to redux
+// Access to things related to redux - HOC
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
 import './header.styles.scss';
